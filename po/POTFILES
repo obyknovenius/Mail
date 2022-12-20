@@ -1,0 +1,6 @@
+data/com.obyknovenius.Mail.desktop.in
+data/com.obyknovenius.Mail.appdata.xml.in
+data/com.obyknovenius.Mail.gschema.xml
+src/main.c
+src/mail-window.c
+src/mail-window.ui
