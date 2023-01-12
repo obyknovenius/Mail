@@ -43,6 +43,22 @@ mail_application_new (const char        *application_id,
 }
 
 static void
+mail_application_startup (GApplication *app)
+{
+  GtkCssProvider *css_provider;
+
+  g_assert (MAIL_IS_APPLICATION (app));
+
+  G_APPLICATION_CLASS (mail_application_parent_class)->startup (app);
+
+  css_provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_resource (css_provider, "/com/obyknovenius/Mail/style.css");
+  gtk_style_context_add_provider_for_display (gdk_display_get_default (),
+                                              GTK_STYLE_PROVIDER (css_provider),
+                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+}
+
+static void
 mail_application_activate (GApplication *app)
 {
   GtkWindow *window;
@@ -63,6 +79,7 @@ mail_application_class_init (MailApplicationClass *klass)
 {
   GApplicationClass *app_class = G_APPLICATION_CLASS (klass);
 
+  app_class->startup = mail_application_startup;
   app_class->activate = mail_application_activate;
 }
 
