@@ -27,8 +27,171 @@
               </object>
             </child>
             <child>
-              <object class="GtkLabel">
-                <property name="label">Panel 1</property>
+              <object class="GtkListBox">
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">6</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon_name">inbox-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Inbox</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">6</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon_name">emblem-documents-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Drafts</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">6</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon_name">outbox-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Outbox</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">6</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon_name">send-alt-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Sent</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">6</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon_name">shoe-box-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Archive</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">6</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon_name">user-trash-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Trash</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">6</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon_name">junk-alt-symbolic</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Junk</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <style>
+                  <class name="navigation-sidebar"/>
+                </style>
               </object>
             </child>
           </object>

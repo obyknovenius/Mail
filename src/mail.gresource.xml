@@ -9,5 +9,9 @@
     <file preprocess="xml-stripblanks" alias="pencil-and-paper-symbolic.svg">../data/icons/hicolor/scalable/actions/pencil-and-paper-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="user-trash-symbolic.svg">../data/icons/hicolor/scalable/actions/user-trash-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="shoe-box-symbolic.svg">../data/icons/hicolor/scalable/actions/shoe-box-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="inbox-symbolic.svg">../data/icons/hicolor/scalable/actions/inbox-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="outbox-symbolic.svg">../data/icons/hicolor/scalable/actions/outbox-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="send-alt-symbolic.svg">../data/icons/hicolor/scalable/actions/send-alt-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="junk-alt-symbolic.svg">../data/icons/hicolor/scalable/actions/junk-alt-symbolic.svg</file>
   </gresource>
 </gresources>
