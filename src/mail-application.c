@@ -22,6 +22,7 @@
 
 #include "mail-application.h"
 #include "mail-window.h"
+#include "mail-endpoint.h"
 
 struct _MailApplication
 {
@@ -62,6 +63,8 @@ static void
 mail_application_activate (GApplication *app)
 {
   GtkWindow *window;
+  MailEndpoint *endpoint;
+  GSocketConnection *connection;
 
   g_assert (MAIL_IS_APPLICATION (app));
 
@@ -72,6 +75,17 @@ mail_application_activate (GApplication *app)
                            NULL);
 
   gtk_window_present (window);
+
+  endpoint = mail_endpoint_new ();
+  connection = mail_endpoint_connect (endpoint);
+  if (connection)
+    {
+      g_print("Connected\n");
+    }
+  else
+    {
+      g_print("Connection failed\n");
+    }
 }
 
 static void

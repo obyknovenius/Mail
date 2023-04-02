@@ -1,6 +1,6 @@
 /* mail-window.h
  *
- * Copyright 2022 Vitaly
+ * Copyright 2023 Vitaly Dyachkov <obyknovenius@me.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,3 +29,4 @@ G_BEGIN_DECLS
 G_DECLARE_FINAL_TYPE (MailWindow, mail_window, MAIL, WINDOW, AdwApplicationWindow)
 
 G_END_DECLS
+

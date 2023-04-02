@@ -2,6 +2,7 @@ mail_sources = [
   'main.c',
   'mail-application.c',
   'mail-window.c',
+  'mail-endpoint.c'
 ]
 
 mail_deps = [

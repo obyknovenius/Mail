@@ -1,4 +1,4 @@
-/* mail-application.h
+/* mail-endpoint.h
  *
  * Copyright 2023 Vitaly Dyachkov <obyknovenius@me.com>
  *
@@ -20,16 +20,18 @@
 
 #pragma once
 
-#include <adwaita.h>
+#include <glib-object.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
-#define MAIL_TYPE_APPLICATION (mail_application_get_type())
+#define MAIL_TYPE_ENDPOINT (mail_endpoint_get_type())
 
-G_DECLARE_FINAL_TYPE (MailApplication, mail_application, MAIL, APPLICATION, AdwApplication)
+G_DECLARE_FINAL_TYPE (MailEndpoint, mail_endpoint, MAIL, ENDPOINT, GObject)
 
-MailApplication *mail_application_new (const char        *application_id,
-                                       GApplicationFlags  flags);
+MailEndpoint *mail_endpoint_new (void);
+
+GSocketConnection *mail_endpoint_connect (MailEndpoint *self);
 
 G_END_DECLS
 
