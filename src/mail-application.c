@@ -60,11 +60,31 @@ mail_application_startup (GApplication *app)
 }
 
 static void
+endpoint_connect_finish_cb (GObject      *source_object,
+                            GAsyncResult *result,
+                            gpointer      user_data)
+{
+  MailEndpoint *endpoint;
+  GSocketConnection *connection;
+
+  endpoint = MAIL_ENDPOINT(source_object);
+
+  connection = mail_endpoint_connect_finish (endpoint, result, user_data);
+  if (connection)
+    {
+      g_print("Connected\n");
+    }
+  else
+    {
+      g_print("Connection failed\n");
+    }
+}
+
+static void
 mail_application_activate (GApplication *app)
 {
   GtkWindow *window;
   MailEndpoint *endpoint;
-  GSocketConnection *connection;
 
   g_assert (MAIL_IS_APPLICATION (app));
 
@@ -77,15 +97,7 @@ mail_application_activate (GApplication *app)
   gtk_window_present (window);
 
   endpoint = mail_endpoint_new ();
-  connection = mail_endpoint_connect (endpoint);
-  if (connection)
-    {
-      g_print("Connected\n");
-    }
-  else
-    {
-      g_print("Connection failed\n");
-    }
+  mail_endpoint_connect_async (endpoint, NULL, endpoint_connect_finish_cb, NULL);
 }
 
 static void

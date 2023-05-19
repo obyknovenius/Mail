@@ -29,9 +29,19 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (MailEndpoint, mail_endpoint, MAIL, ENDPOINT, GObject)
 
-MailEndpoint *mail_endpoint_new (void);
+MailEndpoint *
+mail_endpoint_new (void);
 
-GSocketConnection *mail_endpoint_connect (MailEndpoint *self);
+void
+mail_endpoint_connect_async (MailEndpoint *self,
+                             GCancellable *cancellable,
+                             GAsyncReadyCallback callback,
+                             gpointer user_data);
+
+GSocketConnection *
+mail_endpoint_connect_finish (MailEndpoint *self,
+                              GAsyncResult *result,
+                              GError      **error);
 
 G_END_DECLS
 

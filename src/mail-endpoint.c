@@ -31,14 +31,14 @@ struct _MailEndpoint
 
 G_DEFINE_FINAL_TYPE (MailEndpoint, mail_endpoint, G_TYPE_OBJECT)
 
-MailEndpoint*
+MailEndpoint *
 mail_endpoint_new (void)
 {
   return g_object_new (MAIL_TYPE_ENDPOINT,
                        NULL);
 }
 
-static GSocketClient*
+static GSocketClient *
 get_socket_client (MailEndpoint *self)
 {
   if (self->socket_client)
@@ -49,14 +49,29 @@ get_socket_client (MailEndpoint *self)
   return self->socket_client;
 }
 
-GSocketConnection*
-mail_endpoint_connect (MailEndpoint *self)
+void
+mail_endpoint_connect_async (MailEndpoint       *self,
+                             GCancellable       *cancellable,
+                             GAsyncReadyCallback callback,
+                             gpointer            user_data)
 {
   GSocketClient *socket_client;
 
   socket_client = get_socket_client (self);
 
-  return g_socket_client_connect_to_host (socket_client, "mail.igalia.com", 993, NULL, NULL);
+  g_socket_client_connect_to_host_async (socket_client,
+                                         "mail.igalia.com", 993,
+                                         cancellable, callback, user_data);
+}
+
+GSocketConnection *
+mail_endpoint_connect_finish (MailEndpoint *self,
+                              GAsyncResult *result,
+                              GError      **error)
+{
+  return g_socket_client_connect_to_host_finish (self->socket_client,
+                                                 result,
+                                                 error);
 }
 
 static void
